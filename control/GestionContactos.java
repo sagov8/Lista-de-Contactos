@@ -27,10 +27,10 @@ public class GestionContactos {
         JOptionPane.showMessageDialog(null, " CONTACTO REGISTRADO");
     }
 
-    public void modificarPersona(String id, String nom, String años, String gene, String numero) {
-        int pos = Integer.parseInt(id);
+    public void modificarPersona(String id, String nom, String años, String gene, String numero, String posicion) {
+        int pos = Integer.parseInt(posicion);
 
-        //persona.setId(id);
+        persona.setId(id);
         persona.setNombre(nom);
         persona.setEdad(años);
         persona.setGenero(gene);
