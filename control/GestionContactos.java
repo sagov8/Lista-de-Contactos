@@ -30,6 +30,7 @@ public class GestionContactos {
     public void modificarPersona(String id, String nom, String años, String gene, String numero, String posicion) {
         int pos = Integer.parseInt(posicion);
 
+        Persona persona = lista_contactos.get(pos);
         persona.setId(id);
         persona.setNombre(nom);
         persona.setEdad(años);
@@ -38,7 +39,6 @@ public class GestionContactos {
 
         lista_contactos.add(pos, persona);
         JOptionPane.showMessageDialog(null, "EL CONTACTO SE HA MODIFICADO");
-
     }
 
     public void listaPersona(JTextArea area) {
@@ -56,8 +56,9 @@ public class GestionContactos {
 
     }
 
-    public void eliminarPersona(Persona p) {
-
+    public void eliminarPersona(int posicion) {
+        lista_contactos.remove(posicion);
+        JOptionPane.showMessageDialog(null, "El contacto ha sido eliminado");
     }
 
     public Persona consultarPersona(int posicion) {
