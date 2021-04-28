@@ -60,17 +60,20 @@ public class GestionContactos {
 
     }
 
-    public void consultarPersona(JTextField id, JTextField nombre,
-            JTextField edad, JTextField genero, JTextField numTel) {
-
-        String identificacion = id.getText();
+    public Persona consultarPersona(String id) {
+        int posicion = -1;
+        //Busca con un foreach la persona con el ID
         for (Persona persona : lista_contactos) {
-            if (persona.getId().equals(identificacion)) {
-                nombre.setText(persona.getNombre());
-                edad.setText(persona.getEdad());
-                genero.setText(persona.getGenero());
-                numTel.setText(String.valueOf(persona.getNumeroTelefonico()));
+            if (persona.getId().equals(id)) {
+                posicion = lista_contactos.indexOf(persona);
             }
+        }
+        //Si se encuentra asigna la posición
+        if (posicion != -1) {
+            return lista_contactos.get(posicion);
+        } else {
+            Persona p = new Persona();
+            return p;
         }
 
     }
