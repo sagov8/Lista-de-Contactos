@@ -355,16 +355,14 @@ public class VistaPersonas extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_listar_ActionPerformed
 
     private void btn_Consultar_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Consultar_ActionPerformed
-        try {
+        
             Persona persona = control.consultarPersona(txt_posicion.getText());
             txt_ID_.setText(persona.getId());
             txt_Nombre_.setText(persona.getNombre());
             txt_Edad_.setText(persona.getEdad());
             txt_Genero_.setText(persona.getGenero());
-            txt_numeroTelefono.setText(String.valueOf(persona.getNumeroTelefonico()));
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No se ha encontrado");
-        }
+            txt_numeroTelefono.setText(""+persona.getNumeroTelefonico());
+       
 
     }//GEN-LAST:event_btn_Consultar_ActionPerformed
 
@@ -387,7 +385,7 @@ public class VistaPersonas extends javax.swing.JFrame {
         txt_Edad_.setText(" ");
         txt_Genero_.setText("");
         txt_numeroTelefono.setText("");
-        txt_posicion.setText(" ");
+        //txt_posicion.setText(" ");
         area.setText(" ");
 
     }
