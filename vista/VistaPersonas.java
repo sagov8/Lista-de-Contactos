@@ -318,6 +318,7 @@ public class VistaPersonas extends javax.swing.JFrame {
     private void btn_Consultar_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Consultar_ActionPerformed
         try {
             Persona persona = control.consultarPersona(Integer.parseInt(txt_posicion.getText()));
+            txt_ID_.setText(persona.getId());
             txt_Nombre_.setText(persona.getNombre());
             txt_Edad_.setText(persona.getEdad());
             txt_Genero_.setText(persona.getGenero());
@@ -329,7 +330,7 @@ public class VistaPersonas extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_Consultar_ActionPerformed
 
     private void btn_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarActionPerformed
-        control.modificarPersona(txt_ID_.getText(), txt_Nombre_.getText(), txt_Edad_.getText(), txt_Genero_.getText(), txt_numeroTelefono.getText());
+        control.modificarPersona(txt_ID_.getText(), txt_Nombre_.getText(), txt_Edad_.getText(), txt_Genero_.getText(), txt_numeroTelefono.getText(),txt_posicion.getText());
         limpiar();
     }//GEN-LAST:event_btn_ModificarActionPerformed
 
