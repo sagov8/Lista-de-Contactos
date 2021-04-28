@@ -63,7 +63,7 @@ public class GestionContactos {
     public void consultarPersona(JTextField id, JTextField nombre,
             JTextField edad, JTextField genero, JTextField numTel) {
 
-        String identificacion = String.valueOf(id);
+        String identificacion = id.getText();
         for (Persona persona : lista_contactos) {
             if (persona.getId().equals(identificacion)) {
                 nombre.setText(persona.getNombre());
