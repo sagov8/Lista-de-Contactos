@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import modelo.Persona;
 
 /**
@@ -60,7 +61,20 @@ public class GestionContactos {
         
     }
     
-    public void consultarPersona(){
+    public void consultarPersona(JTextField id, JTextField nombre, 
+            JTextField edad, JTextField genero, JTextField numTel){
+        
+        String identificacion = String.valueOf(id);
+        for(Persona persona: lista_contactos){
+            if(persona.getId() == identificacion){
+                nombre.setText(persona.getNombre());
+                edad.setText(persona.getEdad());
+                genero.setText(persona.getGenero());
+                numTel.setText(String.valueOf(persona.getNumeroTelefonico()));
+            }else{
+                JOptionPane.showConfirmDialog(null, "No se ha encontrado la persona");
+            }
+        }
         
     }
 }
