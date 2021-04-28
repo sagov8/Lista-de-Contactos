@@ -37,7 +37,7 @@ public class GestionContactos {
         persona.setGenero(gene);
         persona.setNumeroTelefonico(Integer.parseInt(numero));
 
-        lista_contactos.add(pos, persona);
+        lista_contactos.set(pos, persona);
         JOptionPane.showMessageDialog(null, "EL CONTACTO SE HA MODIFICADO");
     }
 
