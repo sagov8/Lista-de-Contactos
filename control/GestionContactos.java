@@ -46,7 +46,7 @@ public class GestionContactos {
         area.setText("");
         for (int posicion = 0; posicion < lista_contactos.size(); posicion++) {
             Persona persona = lista_contactos.get(posicion);
-            area.append("\nContacto: ");
+            area.append("\n\nContacto: ");
             area.append("\n ID: " + persona.getId());
             area.append("\nNombre: " + persona.getNombre());
             area.append("\nEdad: " + persona.getEdad());
@@ -62,6 +62,8 @@ public class GestionContactos {
     }
 
     public Persona consultarPersona(int posicion) {
-        return lista_contactos.get(posicion);
+        Persona pers;
+        pers = lista_contactos.get(posicion);
+        return pers;
     }
 }
