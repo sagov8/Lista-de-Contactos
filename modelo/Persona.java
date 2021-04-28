@@ -10,7 +10,7 @@ public class Persona {
     private String nombre;
     private String edad;
     private String genero;
-    private String numeroTelefonico;
+    private int numeroTelefonico;
 
     public String getId() {
         return id;
@@ -20,6 +20,9 @@ public class Persona {
         this.id = id;
     }
 
+   
+
+   
     public String getNombre() {
         return nombre;
     }
@@ -44,13 +47,15 @@ public class Persona {
         this.genero = genero;
     }
 
-    public String getNumeroTelefonico() {
+    public int getNumeroTelefonico() {
         return numeroTelefonico;
     }
 
-    public void setNumeroTelefonico(String numeroTelefonico) {
+    public void setNumeroTelefonico(int numeroTelefonico) {
         this.numeroTelefonico = numeroTelefonico;
     }
+
+  
     
     
     
