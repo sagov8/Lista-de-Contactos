@@ -314,9 +314,12 @@ public class VistaPersonas extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_listar_ActionPerformed
 
     private void btn_Consultar_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Consultar_ActionPerformed
-      
-        control.consultarPersona(txt_ID_, txt_Nombre_, txt_Edad_, txt_Genero_, txt_numeroTelefono);
-    
+
+        Persona persona = control.consultarPersona(txt_ID_.getText());
+        txt_Nombre_.setText(persona.getNombre());
+        txt_Edad_.setText(persona.getEdad());
+        txt_Genero_.setText(persona.getGenero());
+        txt_numeroTelefono.setText(String.valueOf(persona.getNumeroTelefonico()));
     }//GEN-LAST:event_btn_Consultar_ActionPerformed
 
     private void btn_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarActionPerformed

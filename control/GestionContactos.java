@@ -72,6 +72,7 @@ public class GestionContactos {
         if (posicion != -1) {
             return lista_contactos.get(posicion);
         } else {
+            JOptionPane.showMessageDialog(null, "No se ha encontrado la persona");
             Persona p = new Persona();
             return p;
         }
