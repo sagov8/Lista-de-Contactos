@@ -269,7 +269,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Consolas" size="24" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Genero"/>
+                <Property name="text" type="java.lang.String" value="G&#xe9;nero"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txt_Edad_">

@@ -88,7 +88,7 @@ public class VistaPersonas extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
-        jLabel3.setText("Genero");
+        jLabel3.setText("Género");
 
         jLabel7.setFont(new java.awt.Font("Consolas", 1, 24)); // NOI18N
         jLabel7.setText("Número de Telefono");
@@ -308,12 +308,15 @@ public class VistaPersonas extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_Registrar_ActionPerformed
 
     private void btn_listar_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_listar_ActionPerformed
-    control.listaPersona(area);
-        //limpiar();
+     limpiar();
+        control.listaPersona(area);
+       
     }//GEN-LAST:event_btn_listar_ActionPerformed
 
     private void btn_Consultar_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Consultar_ActionPerformed
-       
+       limpiar();
+        control.consultarPersona(txt_ID_, txt_Nombre_, txt_Edad_, txt_Genero_, txt_numeroTelefono);
+    
     }//GEN-LAST:event_btn_Consultar_ActionPerformed
 
     private void btn_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarActionPerformed
