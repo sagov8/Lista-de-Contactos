@@ -13,7 +13,7 @@ import modelo.Persona;
  */
 public class GestionContactos {
 
-    List<Persona> lista_contactos = new ArrayList<>();
+    List<Persona> lista_contactos = new ArrayList<Persona>();
     Persona persona;
 
     public void registrarPersona(String id, String nom, String años, String gene, String telefono) {
@@ -24,7 +24,7 @@ public class GestionContactos {
         persona.setGenero(gene);
         persona.setNumeroTelefonico(Integer.parseInt(telefono));
         lista_contactos.add(persona);
-        JOptionPane.showMessageDialog(null, " CONTACTO REGISTRADO");
+        JOptionPane.showMessageDialog(null," CONTACTO REGISTRADO");
     }
 
     public void modificarPersona(String id, String nom, String años, String gene, String numero, String posicion) {
@@ -61,9 +61,10 @@ public class GestionContactos {
         JOptionPane.showMessageDialog(null, "El contacto ha sido eliminado");
     }
 
-    public Persona consultarPersona(int posicion) {
+    public Persona consultarPersona(String posicion) {
+        int pos = Integer.parseInt(posicion);
         Persona pers;
-        pers = lista_contactos.get(posicion);
+        pers = lista_contactos.get(pos);
         return pers;
     }
 }

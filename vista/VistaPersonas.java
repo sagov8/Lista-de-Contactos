@@ -356,7 +356,7 @@ public class VistaPersonas extends javax.swing.JFrame {
 
     private void btn_Consultar_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Consultar_ActionPerformed
         try {
-            Persona persona = control.consultarPersona(Integer.parseInt(txt_posicion.getText()));
+            Persona persona = control.consultarPersona(txt_posicion.getText());
             txt_ID_.setText(persona.getId());
             txt_Nombre_.setText(persona.getNombre());
             txt_Edad_.setText(persona.getEdad());

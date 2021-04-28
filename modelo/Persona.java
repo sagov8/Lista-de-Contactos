@@ -20,9 +20,6 @@ public class Persona {
         this.id = id;
     }
 
-   
-
-   
     public String getNombre() {
         return nombre;
     }
@@ -55,8 +52,4 @@ public class Persona {
         this.numeroTelefonico = numeroTelefonico;
     }
 
-  
-    
-    
-    
 }
