@@ -60,22 +60,7 @@ public class GestionContactos {
 
     }
 
-    public Persona consultarPersona(String id) {
-        int posicion = -1;
-        //Busca con un foreach la persona con el ID
-        for (Persona persona : lista_contactos) {
-            if (persona.getId().equals(id)) {
-                posicion = lista_contactos.indexOf(persona);
-            }
-        }
-        //Si se encuentra asigna la posición
-        if (posicion != -1) {
-            return lista_contactos.get(posicion);
-        } else {
-            JOptionPane.showMessageDialog(null, "No se ha encontrado la persona");
-            Persona p = new Persona();
-            return p;
-        }
-
+    public Persona consultarPersona(int posicion) {
+        return lista_contactos.get(posicion);
     }
 }

@@ -1,6 +1,7 @@
-
 package vista;
+
 import control.GestionContactos;
+import javax.swing.JOptionPane;
 import modelo.Persona;
 
 /**
@@ -8,11 +9,12 @@ import modelo.Persona;
  * @author sagov8
  */
 public class VistaPersonas extends javax.swing.JFrame {
+
     GestionContactos control;
-    
+
     public VistaPersonas() {
         initComponents();
-        control =new GestionContactos();
+        control = new GestionContactos();
     }
 
     /**
@@ -303,39 +305,44 @@ public class VistaPersonas extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_Nombre_ActionPerformed
 
     private void btn_Registrar_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Registrar_ActionPerformed
-       control.registrarPersona(txt_ID_.getText(),txt_Nombre_.getText(),txt_Edad_.getText(),txt_Genero_.getText(),txt_numeroTelefono.getText());
+        control.registrarPersona(txt_ID_.getText(), txt_Nombre_.getText(), txt_Edad_.getText(), txt_Genero_.getText(), txt_numeroTelefono.getText());
         limpiar();
     }//GEN-LAST:event_btn_Registrar_ActionPerformed
 
     private void btn_listar_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_listar_ActionPerformed
-     limpiar();
+        limpiar();
         control.listaPersona(area);
-       
+
     }//GEN-LAST:event_btn_listar_ActionPerformed
 
     private void btn_Consultar_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Consultar_ActionPerformed
+        try {
+            Persona persona = control.consultarPersona(Integer.parseInt(txt_posicion.getText()));
+            txt_Nombre_.setText(persona.getNombre());
+            txt_Edad_.setText(persona.getEdad());
+            txt_Genero_.setText(persona.getGenero());
+            txt_numeroTelefono.setText(String.valueOf(persona.getNumeroTelefonico()));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No se ha encontrado");
+        }
 
-        Persona persona = control.consultarPersona(txt_ID_.getText());
-        txt_Nombre_.setText(persona.getNombre());
-        txt_Edad_.setText(persona.getEdad());
-        txt_Genero_.setText(persona.getGenero());
-        txt_numeroTelefono.setText(String.valueOf(persona.getNumeroTelefonico()));
     }//GEN-LAST:event_btn_Consultar_ActionPerformed
 
     private void btn_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarActionPerformed
-       control.modificarPersona(txt_ID_.getText(),txt_Nombre_.getText(),txt_Edad_.getText(),txt_Genero_.getText(),txt_numeroTelefono.getText(),txt_posicion.getText());
-       limpiar();
+        control.modificarPersona(txt_ID_.getText(), txt_Nombre_.getText(), txt_Edad_.getText(), txt_Genero_.getText(), txt_numeroTelefono.getText());
+        limpiar();
     }//GEN-LAST:event_btn_ModificarActionPerformed
 
-    public void limpiar(){
+    public void limpiar() {
         txt_ID_.setText(" ");
         txt_Nombre_.setText("");
         txt_Edad_.setText(" ");
         txt_Genero_.setText("");
         txt_numeroTelefono.setText("");
         area.setText(" ");
-         
-     }
+
+    }
+
     /**
      * @param args the command line arguments
      */
